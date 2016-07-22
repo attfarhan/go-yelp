@@ -53,15 +53,15 @@ result, err := client.DoSimpleSearch("coffee", "seattle")
 For more complex searches, the `DoSearch` method allows for searching based on a combination of general search criteria, and advanced location options:
 
 ```go
-// Build an advanced set of search criteria that include 
+// Build an advanced set of search criteria that include
 // general options, and location specific options.
-options := SearchOptions{
-	GeneralOptions: &GeneralOptions{
+options := yelp.SearchOptions{
+	GeneralOptions: &yelp.GeneralOptions{
 		Term: "food",
 	},
-	LocationOptions: &LocationOptions{
+	LocationOptions: &yelp.LocationOptions{
 		"bellevue",
-		&CoordinateOptions{
+		&yelp.CoordinateOptions{
 			Latitude:  null.FloatFrom(37.788022),
 			Longitude: null.FloatFrom(-122.399797),
 		},
